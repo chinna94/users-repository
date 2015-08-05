@@ -1,0 +1,22 @@
+<style media="screen" type="text/css">
+
+
+
+#hit{
+    background-color: aliceblue ;padding :20px;font-weight:bold;border-color: red;
+}
+</style>
+
+
+
+
+    <h1>Tweets</h1>
+<% @tweets.each do |tweet| %>
+    <tr>
+      <div id = "hit">
+      <%=tweet%>
+      </div>
+      <br><br>
+
+    </tr>
+<%end%>

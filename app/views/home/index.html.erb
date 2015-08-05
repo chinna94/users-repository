@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang= "en">
+<head>
+
+  <meta charset = "utf-8">
+  <title>Login Page !!</title>
+
+
+  <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
+  <link rel = "stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css">
+  <link rel = "stylesheet" href="main.css">
+
+  <style media="screen" type="text/css">
+
+      .jumbotron{
+          background-image: url('https://d2k1ftgv7pobq7.cloudfront.net/images/backgrounds/dew/large.jpg');
+          background-image: repeat;
+          background-attachment:fixed;
+          height:2000px;
+          z-index:1;
+      }
+
+      .nav li{
+
+          display:inline;
+          text-transform: uppercase;
+          padding-left: 40px;
+          font-size: 18px;
+          font-weight:bold;
+          margin-right:50px;
+      }
+
+
+      .container{
+          position: relative;
+          top:100px;
+      }
+
+      .jumbotron h1{
+          color : green;
+          font-family: "Helvetica";
+          padding-left: 390px;
+      }
+
+      .jumbotron p{
+          color:black ;
+          margin-left:420px;/*Why could i not be able to keep up margin:auto;*/
+          letter-spacing: 2px;
+          margin-top: 17px;
+      }
+
+      .nav .container-fluid{
+          z-index: 2;
+          background-color: lavender;
+          height:70px;
+          padding-top: 12px;
+          opacity:1;
+      }
+
+
+      .container{
+          opacity: 1;
+          padding-left: 200px;
+      }
+
+      .panel-title{
+          font-size:26px;
+          font-family: "Garamond";
+          padding-left : 145px;
+
+      }
+
+
+      .panel-heading{
+          height: 50px;
+      }
+
+      .panel-body{
+          padding:30px;
+          height:300px;
+      }
+
+      #fpw a{
+          color:red;
+          font-size:80%;
+          font-family: "Garamond";
+          float:right;
+          position:relative;
+          top:-16px;
+      }
+
+  </style>
+
+</head>
+
+<body>
+<div class = "jumbotron">
+  <div class = "container-fluid">
+    <h1>TWITTER MINE</h1>
+    <p>RUBY ON RAILS DEMO PROJECT</p>
+  </div>
+  <div class = "nav">
+    <div class="container-fluid">
+      <div class="pull-left">
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+        </ul>
+      </div>
+      <div class="pull-right">
+        <ul>
+          <li><%=link_to "SIGN UP" , sign_up_path , :data => {:toggle=>"dropdown"}%></li>
+          <li><%=link_to "LOGIN" , log_in_path , :data => {:toggle=>"dropdown"}%></li>
+          <li>Help</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <h2 style="margin-left:430px;margin-top:50px;color:firebrick"><strong>No Twitter???...Please <button  type="button"  class = "btn btn-primary btn-large">Register &raquo;</button></strong></h2>
+
+
+  <div class = "container">
+    <div id = "loginbox" class="col-md-offset-3 col-md-6 col-md-offset-3">
+      <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgK08IaajjU3-O7_6Bb3cGkmKX703gzTvlIPE2kFZYnvxVkzWAYA"/>
+    </div>
+  </div>
+</div>
+
+
+<script type = "text/javascript">
+    function check()
+    {
+
+        var x,y,text1,text2;
+        //get the value of the input field entered by using id="username"
+        x = document.getElementById("username").value;
+
+        if((/^[a-z]+$/i.test(x))|| (x.toLowerCase().indexOf("@gmail.com") >= 0))
+        {
+            text1 = "Username Acceptable";
+        }
+        else text1 = "Invalid Username OR E-Mail ID"
+
+        y = document.getElementById("password").value;
+
+        if(y.length >= 6)
+        {
+            text2 = "Valid Password Input";
+        }
+        else text2 = "Invalid Password Entry";
+
+
+        document.getElementById("demo1").innerHTML = text1;
+        document.getElementById("demo2").innerHTML = text2;
+    }
+
+</script>
+
+</body>
+</html>

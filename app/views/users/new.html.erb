@@ -1,0 +1,16 @@
+<h1>Sign Up</h1>
+<%=form_for User.new do |f| %>
+    <%=f.label :email %><br>
+    <%=f.text_field :email %><br><br>
+    <%=f.label :password %><br>
+    <%=f.password_field :password %><br><br>
+    <%=f.label :password_confirmation %><br>
+    <%=f.password_field :password_confirmation %><br><br>
+
+
+     <form method="post" action="/users/create" class="button_to">
+       <input value="SignUp" type="submit" />
+     </form>
+
+
+<%end%>

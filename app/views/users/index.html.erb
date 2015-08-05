@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang= "en">
+<head>
+
+  <meta charset = "utf-8">
+  <title>Login Page !!</title>
+
+
+  <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
+  <link rel = "stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css">
+  <link rel = "stylesheet" href="main.css">
+
+  <style media="screen" type="text/css">
+
+      .jumbotron{
+          background-image: url('https://d2k1ftgv7pobq7.cloudfront.net/images/backgrounds/dew/large.jpg');
+          background-attachment:fixed;
+          height:1000px;
+          z-index:1;
+      }
+
+      .nav li{
+
+          display:inline;
+          text-transform: uppercase;
+          padding-left: 40px;
+          font-size: 18px;
+          font-weight:bold;
+          margin-right:50px;
+      }
+
+
+      .container{
+          position: relative;
+          top:100px;
+      }
+
+      .jumbotron h1{
+          color : green;
+          font-family: "Helvetica";
+          padding-left: 390px;
+      }
+
+      .jumbotron p{
+          color:black ;
+          margin-left:420px;/*Why could i not be able to keep up margin:auto;*/
+          letter-spacing: 2px;
+          margin-top: 17px;
+      }
+
+      .nav .container-fluid{
+          z-index: 2;
+          background-color: lavender;
+          height:70px;
+          padding-top: 12px;
+          opacity:1;
+      }
+
+
+      .container{
+          opacity: 1;
+          padding-left: 200px;
+      }
+
+      .panel-title{
+          font-size:26px;
+          font-family: "Garamond";
+          padding-left : 145px;
+
+      }
+
+
+      .panel-heading{
+          height: 50px;
+      }
+
+      .panel-body{
+          padding:30px;
+          height:300px;
+      }
+
+      #fpw a{
+          color:red;
+          font-size:80%;
+          font-family: "Garamond";
+          float:right;
+          position:relative;
+          top:-16px;
+      }
+
+  </style>
+
+</head>
+
+<body>
+<div class = "jumbotron">
+  <div class = "container-fluid">
+    <h1>TWITTER MINE</h1>
+    <p>RUBY ON RAILS DEMO PROJECT</p>
+
+    <div class="pull-right">
+      <div class="btn btn-primary btn-large">
+      <%= link_to 'Logout', log_out_path %>
+      </div>
+    </div>
+  </div>
+  <div class = "nav">
+    <div class="container-fluid">
+      <div class="pull-left">
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+        </ul>
+      </div>
+      <div class="pull-right">
+        <ul>
+          <li><%=link_to "SIGN UP" , sign_up_path , :data => {:toggle=>"dropdown"}%></li>
+          <li><%=link_to "LOGIN" , log_in_path , :data => {:toggle=>"dropdown"}%></li>
+          <li>Help</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <h2 style="margin-left:350px;margin-top:50px;color:firebrick"><strong>Thanks for Registering into Twitter-Login Now</strong></h2>
+
+
+  <div class = "container">
+    <p style="font-size:30px;margin-left:-10px;font-weight:bold;color:gold" class="col-md-3">Search Twitter</p>
+
+    <%= form_tag("/tweeters/index", method: "get") do %>
+        <%= label_tag( :q , 'Search Twitter') %>
+      <br>
+        <%= text_field_tag(:q) %>
+      <br>
+      <br>
+        <%= submit_tag('Get Tweets') %>
+    <%end%>
+
+
+  </div>
+</div>
+
+
+<script type = "text/javascript">
+
+        function search()
+        {
+            var x;
+            x=document.getElementById("demo100").value;
+        }
+</script>
+
+</body>
+</html>

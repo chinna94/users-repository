@@ -1,0 +1,21 @@
+Brief Description of the Twitter Application :
+
+This application TwitterMine focusses on developing an application which would bring the recent 20 tweets related to the keyword entered in the form from the Social Networking site Twitter-Using OmniAuthentication of Twitter.
+
+This application contains a total of 5 controllers
+1)Application controller - 
+2)home controller - 
+3)Users controller - 
+4)Session controller -
+5)TweetersController -
+
+All the other controllers are the children of the Application controller
+
+Home controller basically brings the home page to the view and however as there is no need of any info to be stored ad it is the page which gives access to the login or signup point only..There is no need of model...Hence home model is not created.
+
+users Controller brings the signUp page and is only meant for new users and once user signs up bby reconforming the password,as his session with the webpage has started ...he will move to the sessions index view page,where he has to enter the keyword in the form and click get tweets button in order to get the tweets.
+
+
+sessions controller starts the session , destroys it on clicking the log out button situated on the top right,sessions controller can be directly accessed by the old user who just logs in with his previous email and password,which are already stored in the database,..created by user model.
+
+Tweeters controller gets the tweets related to the keyword from the Twitter 
